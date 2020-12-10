@@ -56,5 +56,4 @@ class HomeFragment : Fragment() {
         getNote().execute()
     }
 
-
 }
