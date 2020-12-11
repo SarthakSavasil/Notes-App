@@ -13,7 +13,7 @@ import com.sarthaksavasil.notes_app.db.Notes
 import com.sarthaksavasil.notes_app.db.NotesDB
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(),IOnBackPressed{
 
 
     override fun onCreateView(
@@ -37,6 +37,13 @@ class HomeFragment : Fragment() {
 
     }
 
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        val callback = requireActivity().onBackPressedDispatcher.addCallback(this) {
+//
+//        }
+
+
     private fun getdata(){
         recycler_view_note.setHasFixedSize(true)
         recycler_view_note.layoutManager = StaggeredGridLayoutManager(3,StaggeredGridLayoutManager.VERTICAL)
@@ -55,5 +62,15 @@ class HomeFragment : Fragment() {
         }
         getNote().execute()
     }
+    override fun hBackPressed(): Boolean {
 
+        return true
+
+//        return if (myCondition) {
+//            //action not popBackStack
+//            true
+//        } else {
+//            false
+//        }
+    }
 }

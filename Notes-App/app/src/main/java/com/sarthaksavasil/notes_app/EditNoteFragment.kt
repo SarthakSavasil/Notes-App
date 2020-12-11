@@ -7,6 +7,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.navigation.Navigation
+import androidx.navigation.PopUpToBuilder
 import androidx.room.Delete
 import com.sarthaksavasil.notes_app.EditNoteFragmentDirections.actionSave
 import com.sarthaksavasil.notes_app.db.Notes
@@ -45,7 +46,7 @@ class EditNoteFragment : Fragment() {
             val action = EditNoteFragmentDirections.actionSave()
             Navigation.findNavController(it).navigate(action)
         }
-       // NotesDB(activity!!).getNoteDao()
+
     }
 
     override fun onCreateView(
@@ -89,6 +90,7 @@ class EditNoteFragment : Fragment() {
         inflater.inflate(R.menu.menu,menu)
     }
 
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.menu_d -> if(note!=null) {
@@ -115,6 +117,7 @@ class EditNoteFragment : Fragment() {
                 }
             }.create().show()
     }
+
     private fun deldata(){
         class DelNote:AsyncTask<Void,Void,Void>() {
             override fun doInBackground(vararg params: Void?): Void? {

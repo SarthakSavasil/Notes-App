@@ -8,26 +8,24 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.sarthaksavasil.notes_app.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        android:label="My Notes"
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/actionToedit"
-            app:destination="@id/editNoteFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/editNoteFragment" />
     </fragment>
     <fragment
         android:id="@+id/editNoteFragment"
         android:name="com.sarthaksavasil.notes_app.EditNoteFragment"
-        android:label="fragment_edit_note"
-        tools:layout="@layout/fragment_edit_note" >
+        android:label="Edit"
+        tools:layout="@layout/fragment_edit_note">
         <action
             android:id="@+id/actionSave"
-            app:destination="@id/homeFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/homeFragment" />
         <argument
-            app:argType="com.sarthaksavasil.notes_app.db.Notes"
             android:name="Notes"
-            app:nullable="true"
-            android:defaultValue="@null" />
+            android:defaultValue="@null"
+            app:argType="com.sarthaksavasil.notes_app.db.Notes"
+            app:nullable="true" />
     </fragment>
 </navigation>
