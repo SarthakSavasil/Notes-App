@@ -1,18 +1,17 @@
 package com.sarthaksavasil.notes_app
 
 import android.app.AlertDialog
+import android.graphics.Rect
 import android.os.AsyncTask
 import android.os.Bundle
 import android.view.*
-import androidx.fragment.app.Fragment
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import androidx.navigation.PopUpToBuilder
-import androidx.room.Delete
-import com.sarthaksavasil.notes_app.EditNoteFragmentDirections.actionSave
 import com.sarthaksavasil.notes_app.db.Notes
 import com.sarthaksavasil.notes_app.db.NotesDB
 import kotlinx.android.synthetic.main.fragment_edit_note.*
+
 
 class EditNoteFragment : Fragment() {
     private var note:Notes?=null

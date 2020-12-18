@@ -21,6 +21,7 @@ class AllNotesAdapter(private val notelist:List<Notes>): RecyclerView.Adapter<Al
     override fun getItemCount(): Int = notelist.size
 
     override fun onBindViewHolder(holder: AllNotesViewHolder, position: Int) {
+
         holder.view.card_title.text = notelist[position].title
         holder.view.card_body.text = notelist[position].note
 

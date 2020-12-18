@@ -3,32 +3,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditNoteFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".EditNoteFragment"
+    android:background="@color/colorPrimaryDark"
+    android:fitsSystemWindows="true">
+
     <EditText
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:hint="Title"
-    android:layout_alignParentTop="true"
+        android:textColorHint="#958A8A"
+        android:layout_alignParentTop="true"
         android:id="@+id/title"
+        android:textColor="@color/colorAccent"
         android:inputType="text"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:hint="Notes"
+        android:textColorHint="#958A8A"
         android:layout_below="@+id/title"
         android:gravity="top"
         android:inputType="textMultiLine"
+        android:textColor="@color/colorAccent"
         android:id="@+id/body"/>
 
-
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:backgroundTint="@color/colorPrimary"
+        android:background="@color/colorPrimary"
+        android:layout_gravity="bottom|end"
+        app:borderWidth="0dp"
         android:src="@drawable/ic_baseline_check_24" />
-
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
 </RelativeLayout>

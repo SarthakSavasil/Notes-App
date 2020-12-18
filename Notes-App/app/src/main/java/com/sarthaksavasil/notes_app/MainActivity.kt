@@ -1,5 +1,6 @@
 package com.sarthaksavasil.notes_app
 
+import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.NavController
@@ -24,26 +25,35 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-//    override fun onBackPressed() {
-//        val fragment =
-//            this.supportFragmentManager.findFragmentById(R.id.homeFragment)
-////        (fragment as? IOnBackPressed)?.hBackPressed()?.not().let {
-////            super.onBackPressed()
-//            if (fragment is IOnBackPressed) {
-//
-//            } else {
-//                super.onBackPressed()
-////                finish()
-////        }
-//            }
-//
-//
-////            when(supportFragmentManager.fragments[0].javaClass.simpleName){
-////                "homeFragment" -> finish()
-////                else -> supportFragmentManager.popBackStack()
-////            }
-//        }
+    override fun onBackPressed() {
+        val fragment =
+            this.supportFragmentManager.findFragmentById(R.id.homeFragment)
+//        (fragment as? IOnBackPressed)?.hBackPressed()?.not().let {
+//            super.onBackPressed()
+        if (fragment is IOnBackPressed) {
 
+        } else {
+            //    super.onBackPressed()
+
+            exit()
+        }
+
+//            when(supportFragmentManager.fragments[0].javaClass.simpleName){
+//                "homeFragment" -> finish()
+//                else -> supportFragmentManager.popBackStack()
+//            }
     }
 
+    fun exit(){
+        AlertDialog.Builder(this).apply {
+            setTitle("Sure?")
+            setMessage("Do you want to exit?")
+            setPositiveButton("Yes"){_,_ ->
+                finish()
+            }
+            setNegativeButton("No"){_,_ ->
 
+            }
+        }.create().show()
+    }
+}

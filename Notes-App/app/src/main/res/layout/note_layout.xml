@@ -4,16 +4,16 @@
     android:layout_width="125sp"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-
     >
 
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="2dp"
+    app:cardCornerRadius="8dp"
     app:cardElevation="10dp"
-    android:layout_margin="10dp"
+    android:layout_margin="6dp"
+    app:cardBackgroundColor="#1F1F1F"
     >
 
     <RelativeLayout
@@ -28,6 +28,7 @@
             android:text="Title"
             android:layout_marginBottom="5dp"
             android:layout_marginLeft="5dp"
+            android:textColor="@color/colorAccent"
             android:layout_marginRight="5dp">
 
         </TextView>
@@ -40,6 +41,7 @@
             android:layout_marginRight="5dp"
             android:text="fsdfs"
             android:id="@+id/card_body"
+            android:textColor="@color/colorAccent"
             android:layout_below="@id/card_title">
 
         </TextView>
