@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,32 +8,39 @@
     android:background="@color/colorPrimaryDark">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_note"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recycler_view_note">
+        android:layout_height="match_parent">
 
     </androidx.recyclerview.widget.RecyclerView>
 
     <TextView
-        android:layout_width="wrap_content"
         android:id="@+id/noview"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textStyle="italic"
-        android:fontFamily="serif-monospace"
-        android:text="No Saved Notes"
-        android:textSize="32dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:textColor="#958A8A"/>
+        android:fontFamily="serif-monospace"
+        android:text="No Saved Notes"
+        android:textColor="#958A8A"
+        android:textSize="32dp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/recycler_view_note"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/button_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
         android:backgroundTint="@color/colorPrimary"
+        android:clickable="true"
+        android:src="@android:drawable/ic_input_add"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
         app:borderWidth="0dp"
-
-        android:src="@android:drawable/ic_input_add" />
-</RelativeLayout>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
